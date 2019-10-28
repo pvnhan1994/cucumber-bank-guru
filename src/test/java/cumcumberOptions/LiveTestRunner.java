@@ -1,20 +1,18 @@
 package cumcumberOptions;
 
-import org.junit.runner.RunWith;
-
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/test/java/features", //tro den file feature
-		glue = "stepDefinitions",
+		glue = "live/stepDefinitions",
 		monochrome = true,
 		plugin= {"pretty", "html:target/site/cucumber-report-default", "json:target/site/cucumber.json"},
 		snippets = SnippetType.CAMELCASE,
-		tags = {"@login"})
+		tags = {"@register"})
 
-public class CucumberTestRunner {
-
+public class LiveTestRunner {
 }
