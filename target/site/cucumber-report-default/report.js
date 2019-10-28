@@ -1,179 +1,119 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("registerAndLogin.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("travelRegisterPage.feature");
 formatter.feature({
   "line": 1,
-  "name": "Login to Application",
-  "description": "As a PO\nI want to login to application\nSo that verify login function work well",
-  "id": "login-to-application",
+  "name": "Register Account",
+  "description": "",
+  "id": "register-account",
   "keyword": "Feature"
 });
 formatter.scenario({
-  "line": 6,
-  "name": "Register and Login to application",
+  "line": 4,
+  "name": "Title",
   "description": "",
-  "id": "login-to-application;register-and-login-to-application",
+  "id": "register-account;title",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 5,
-      "name": "@login"
+      "line": 3,
+      "name": "@register"
     }
   ]
 });
 formatter.step({
-  "line": 7,
-  "name": "I open application",
+  "line": 5,
+  "name": "I open Php Travel page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 8,
-  "name": "I get Login page Url",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 9,
-  "name": "I click to here link",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 10,
-  "name": "I input to email textbox with data \"autorandom\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I click to Submit button at Register page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I get UserID infor",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 13,
-  "name": "I get Password infor",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "I open Login page again",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 15,
-  "name": "I input to Username textbox",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "I input to Password textbox",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "I click to Login button at Login page",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "Verify Home page displayed with message \"Welcome To Manager\u0027s Page of Guru99 Bank\"",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "RegisterAndLoginSteps.iOpenApplication()"
-});
-formatter.result({
-  "duration": 20345780632,
-  "status": "passed"
-});
-formatter.match({
-  "location": "RegisterAndLoginSteps.iGetLoginPageUrl()"
-});
-formatter.result({
-  "duration": 13876283,
-  "status": "passed"
-});
-formatter.match({
-  "location": "RegisterAndLoginSteps.iClickToHereLink()"
-});
-formatter.result({
-  "duration": 27303255473,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
+  "line": 6,
+  "name": "I input to Register form",
+  "rows": [
     {
-      "val": "autorandom",
-      "offset": 36
+      "cells": [
+        "FirstName",
+        "LastName",
+        "Phone",
+        "Email",
+        "Password"
+      ],
+      "line": 8
+    },
+    {
+      "cells": [
+        "PHan Viet",
+        "Nhan",
+        "0935602450",
+        "vietnhan@gmail.com",
+        "1231233"
+      ],
+      "line": 9
+    },
+    {
+      "cells": [
+        "Ho Tri",
+        "Bao",
+        "9876543432",
+        "vietndsahan@gmail.com",
+        "1231233"
+      ],
+      "line": 10
+    },
+    {
+      "cells": [
+        "Phan Van",
+        "Ca",
+        "0321542450",
+        "hehehe@gmail.com",
+        "1231233"
+      ],
+      "line": 11
+    },
+    {
+      "cells": [
+        "Hoang Viet",
+        "Hoan",
+        "0967865667",
+        "conbo@gmail.com",
+        "1231233"
+      ],
+      "line": 12
+    },
+    {
+      "cells": [
+        "Tuan Viet",
+        "Truc",
+        "5568768900",
+        "aloalo@gmail.com",
+        "1231233"
+      ],
+      "line": 13
+    },
+    {
+      "cells": [
+        "Ng Trung",
+        "Lap",
+        "1235435354",
+        "helloxinh@gmail.com",
+        "1231233"
+      ],
+      "line": 14
     }
   ],
-  "location": "RegisterAndLoginSteps.iInputToEmailTextboxWithData(String)"
+  "keyword": "When "
+});
+formatter.match({
+  "location": "TravelRegisterPageSteps.iOpenPhpTravelPage()"
 });
 formatter.result({
-  "duration": 360925569,
+  "duration": 12066468459,
   "status": "passed"
 });
 formatter.match({
-  "location": "RegisterAndLoginSteps.iClickToSubmitButtonAtRegisterPage()"
+  "location": "TravelRegisterPageSteps.iInputToRegisterForm(DataTable)"
 });
 formatter.result({
-  "duration": 4802592736,
-  "status": "passed"
-});
-formatter.match({
-  "location": "RegisterAndLoginSteps.iGetUserIDInfor()"
-});
-formatter.result({
-  "duration": 40536519,
-  "status": "passed"
-});
-formatter.match({
-  "location": "RegisterAndLoginSteps.iGetPasswordInfor()"
-});
-formatter.result({
-  "duration": 37652919,
-  "status": "passed"
-});
-formatter.match({
-  "location": "RegisterAndLoginSteps.iOpenLoginPageAgain()"
-});
-formatter.result({
-  "duration": 4956380944,
-  "status": "passed"
-});
-formatter.match({
-  "location": "RegisterAndLoginSteps.iInputToUsernameTextbox()"
-});
-formatter.result({
-  "duration": 164762864,
-  "status": "passed"
-});
-formatter.match({
-  "location": "RegisterAndLoginSteps.iInputToPasswordTextbox()"
-});
-formatter.result({
-  "duration": 139314904,
-  "status": "passed"
-});
-formatter.match({
-  "location": "RegisterAndLoginSteps.iClickToLoginButtonAtLoginPage()"
-});
-formatter.result({
-  "duration": 13703232221,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Welcome To Manager\u0027s Page of Guru99 Bank",
-      "offset": 41
-    }
-  ],
-  "location": "RegisterAndLoginSteps.verifyHomePageDisplayedWithMessage(String)"
-});
-formatter.result({
-  "duration": 45536362,
+  "duration": 5789052784,
   "status": "passed"
 });
 });

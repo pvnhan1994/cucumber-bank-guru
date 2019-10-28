@@ -1,4 +1,4 @@
-package stepDefinitions;
+package bank.stepDefinitions;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
