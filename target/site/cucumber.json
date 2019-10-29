@@ -3,122 +3,173 @@
     "line": 1,
     "elements": [
       {
-        "line": 4,
-        "name": "Title",
+        "line": 22,
+        "name": "Register and Login to application",
         "description": "",
-        "id": "register-account;title",
+        "id": "login-to-application;register-and-login-to-application;;2",
         "type": "scenario",
-        "keyword": "Scenario",
+        "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 12066468459,
+              "duration": 9221034715,
               "status": "passed"
             },
-            "line": 5,
-            "name": "I open Php Travel page",
+            "line": 8,
+            "name": "I get Login page Url",
             "match": {
-              "location": "TravelRegisterPageSteps.iOpenPhpTravelPage()"
+              "location": "LoginPageSteps.iGetLoginPageUrl()"
             },
-            "keyword": "Given "
+            "keyword": "When "
           },
           {
             "result": {
-              "duration": 5789052784,
+              "duration": 3006488440,
               "status": "passed"
             },
-            "line": 6,
-            "name": "I input to Register form",
+            "line": 9,
+            "name": "I click to here link",
             "match": {
-              "location": "TravelRegisterPageSteps.iInputToRegisterForm(DataTable)"
+              "location": "LoginPageSteps.iClickToHereLink()"
             },
-            "rows": [
-              {
-                "cells": [
-                  "FirstName",
-                  "LastName",
-                  "Phone",
-                  "Email",
-                  "Password"
-                ],
-                "line": 8
-              },
-              {
-                "cells": [
-                  "PHan Viet",
-                  "Nhan",
-                  "0935602450",
-                  "vietnhan@gmail.com",
-                  "1231233"
-                ],
-                "line": 9
-              },
-              {
-                "cells": [
-                  "Ho Tri",
-                  "Bao",
-                  "9876543432",
-                  "vietndsahan@gmail.com",
-                  "1231233"
-                ],
-                "line": 10
-              },
-              {
-                "cells": [
-                  "Phan Van",
-                  "Ca",
-                  "0321542450",
-                  "hehehe@gmail.com",
-                  "1231233"
-                ],
-                "line": 11
-              },
-              {
-                "cells": [
-                  "Hoang Viet",
-                  "Hoan",
-                  "0967865667",
-                  "conbo@gmail.com",
-                  "1231233"
-                ],
-                "line": 12
-              },
-              {
-                "cells": [
-                  "Tuan Viet",
-                  "Truc",
-                  "5568768900",
-                  "aloalo@gmail.com",
-                  "1231233"
-                ],
-                "line": 13
-              },
-              {
-                "cells": [
-                  "Ng Trung",
-                  "Lap",
-                  "1235435354",
-                  "helloxinh@gmail.com",
-                  "1231233"
-                ],
-                "line": 14
-              }
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1283967349,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I input to email textbox with data \"randomemail\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "randomemail",
+                  "offset": 36
+                }
+              ],
+              "location": "RegisterPageSteps.iInputToEmailTextboxWithData(String)"
+            },
+            "matchedColumns": [
+              0
             ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2756511032,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I click to Submit button at Register page",
+            "match": {
+              "location": "RegisterPageSteps.iClickToSubmitButtonAtRegisterPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 148311945,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I get UserID infor",
+            "match": {
+              "location": "RegisterPageSteps.iGetUserIDInfor()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 72735112,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I get Password infor",
+            "match": {
+              "location": "RegisterPageSteps.iGetPasswordInfor()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1679102084,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I open Login page again",
+            "match": {
+              "location": "RegisterPageSteps.iOpenLoginPageAgain()"
+            },
             "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1191544295,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I input to Username textbox",
+            "match": {
+              "location": "LoginPageSteps.iInputToUsernameTextbox()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1525923147,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I input to Password textbox",
+            "match": {
+              "location": "LoginPageSteps.iInputToPasswordTextbox()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3980540605,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I click to Login button at Login page",
+            "match": {
+              "location": "LoginPageSteps.iClickToLoginButtonAtLoginPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 100714638,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Verify Home page displayed with message \"Welcome To Manager\u0027s Page of Guru99 Bank\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Welcome To Manager\u0027s Page of Guru99 Bank",
+                  "offset": 41
+                }
+              ],
+              "location": "HomePageSteps.verifyHomePageDisplayedWithMessage(String)"
+            },
+            "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 3,
-            "name": "@register"
+            "line": 6,
+            "name": "@login"
           }
         ]
       }
     ],
-    "name": "Register Account",
-    "description": "",
-    "id": "register-account",
+    "name": "Login to Application",
+    "description": "As a PO\nI want to login to application\nSo that verify login function work well",
+    "id": "login-to-application",
     "keyword": "Feature",
-    "uri": "travelRegisterPage.feature"
+    "uri": "registerAndLogin.feature"
   }
 ]
