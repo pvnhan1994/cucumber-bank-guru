@@ -18,7 +18,7 @@ import pageObjects.DepositPageObject;
 import pageObjects.EditAccountPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.NewAccountPageObject;
-import pageUIs.AbstractPageUI;
+import pageUIs.DynamicPageUI;
 
 public class AbstractPage {
 
@@ -58,9 +58,12 @@ public class AbstractPage {
 		sleepInSecond(driver,2);
 	}
 
-	private void sleepInSecond(WebDriver driver, int i) {
-		// TODO Auto-generated method stub
-		
+	public void sleepInSecond(WebDriver driver, long timeInSecond) {
+		try {
+			Thread.sleep(timeInSecond * 1000);
+		}catch (InterruptedException e){
+			e.printStackTrace();
+		}
 	}
 
 	public void cancelAlert(WebDriver driver) {
@@ -421,33 +424,33 @@ public class AbstractPage {
 
 	// PageUI
 	public NewAccountPageObject openNewAccountPage(WebDriver driver) {
-		waitForElementVisible(driver, AbstractPageUI.NEW_ACCOUNT_LINK);
-		clickToElement(driver, AbstractPageUI.NEW_ACCOUNT_LINK);
+		waitForElementVisible(driver, DynamicPageUI.NEW_ACCOUNT_LINK);
+		clickToElement(driver, DynamicPageUI.NEW_ACCOUNT_LINK);
 		return PageGeneratorManager.getNewAccountPage(driver);
 	}
 
 	public EditAccountPageObject openEditAccountPage(WebDriver driver) {
-		waitForElementVisible(driver, AbstractPageUI.EDIT_ACCOUNT_LINK);
-		clickToElement(driver, AbstractPageUI.EDIT_ACCOUNT_LINK);
+		waitForElementVisible(driver, DynamicPageUI.EDIT_ACCOUNT_LINK);
+		clickToElement(driver, DynamicPageUI.EDIT_ACCOUNT_LINK);
 		return PageGeneratorManager.getEditAccountPage(driver);
 	}
 
 	public DepositPageObject openDepositPage(WebDriver driver) {
-		waitForElementVisible(driver, AbstractPageUI.DEPOSIT_LINK);
-		clickToElement(driver, AbstractPageUI.DEPOSIT_LINK);
+		waitForElementVisible(driver, DynamicPageUI.DEPOSIT_LINK);
+		clickToElement(driver, DynamicPageUI.DEPOSIT_LINK);
 		return PageGeneratorManager.getDepositPage(driver);
 	}
 
 	public HomePageObject openHomePage(WebDriver driver) {
-		waitForElementVisible(driver, AbstractPageUI.MANAGER_LINK);
-		clickToElement(driver, AbstractPageUI.MANAGER_LINK);
+		waitForElementVisible(driver, DynamicPageUI.MANAGER_LINK);
+		clickToElement(driver, DynamicPageUI.MANAGER_LINK);
 		return PageGeneratorManager.getHomePage(driver);
 	}
 
 	// 15> 20 Pages
 	public AbstractPage openMultiPage(WebDriver driver, String pagename) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MENU_LINK, pagename);
-		clickToElement(driver, AbstractPageUI.DYNAMIC_MENU_LINK, pagename);
+		waitForElementVisible(driver, DynamicPageUI.DYNAMIC_MENU_LINK, pagename);
+		clickToElement(driver, DynamicPageUI.DYNAMIC_MENU_LINK, pagename);
 
 		switch (pagename) {
 		
@@ -477,75 +480,7 @@ public class AbstractPage {
 		}
 	}
 
-	// 100> pages
-	public void openMultiPages(WebDriver driver, String pagename) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MENU_LINK, pagename);
-		clickToElement(driver, AbstractPageUI.DYNAMIC_MENU_LINK, pagename);
-	}
 
-	// Dynamic Page Object/ Page Element/ Page UI
-	public void inputToDynamicTextbox(WebDriver driver, String textboxNameID, String valueToSendKey) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_BUTTON, textboxNameID);
-		sendkeyElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_BUTTON, valueToSendKey,textboxNameID);
-	}
-
-	public void inputToDynamicTextArea(WebDriver driver, String textAreaNameID, String valueToSendKey) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXT_AREA, textAreaNameID);
-		sendkeyElement(driver, AbstractPageUI.DYNAMIC_TEXT_AREA, valueToSendKey,textAreaNameID);
-	}
-
-	public void clickToDynamicRadioButton(WebDriver driver, String radioButtonNameValue) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_RADIO_BUTTON,radioButtonNameValue);
-		clickToElement(driver, AbstractPageUI.DYNAMIC_RADIO_BUTTON, radioButtonNameValue);
-	}
-
-	public void clickToDynamicButton(WebDriver driver, String ButtonNameValue) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_BUTTON,ButtonNameValue);
-		clickToElement(driver, AbstractPageUI.DYNAMIC_BUTTON, ButtonNameValue);
-	}
-	
-	public void selectToDynamicDropdownList(WebDriver driver,String dropDownID,  String valueInDropdown) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_DROPDOWN_LIST, dropDownID);
-		selectItemInDropDown(driver, AbstractPageUI.DYNAMIC_DROPDOWN_LIST, valueInDropdown, dropDownID);
-	}
-	
-	public boolean isDynamicPageOrMessageDisplayed(WebDriver driver, String pageHeadingName) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_PAGE_HEADING, pageHeadingName);
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_PAGE_HEADING,pageHeadingName);
-	}
-	public String getDynamicTextInTable(WebDriver driver, String rowName) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_ROW_NAME, rowName);
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_ROW_NAME, rowName);
-		
-	}
-	public String getDynamicTextInTableValidate(WebDriver driver, String rowName) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_ROW_NAME_VALIDATE, rowName);
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_ROW_NAME_VALIDATE, rowName);
-		
-	}
-	public void pressTABToDynamicTextbox(WebDriver driver, String nameID) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_BUTTON, nameID);
-		sendKeyboardToElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_BUTTON, Keys.TAB, nameID);
-	}
-	public void pressTABToDynamicTextArea(WebDriver driver, String nameID) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXT_AREA, nameID);
-		sendKeyboardToElement(driver, AbstractPageUI.DYNAMIC_TEXT_AREA, Keys.TAB, nameID);
-	}
-	public void clearDynamicTextArea(WebDriver driver, String nameID) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXT_AREA, nameID);
-		clearDataElement(driver, AbstractPageUI.DYNAMIC_TEXT_AREA, nameID);
-	}
-	public void clearDynamicTextbox(WebDriver driver, String nameID) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_BUTTON, nameID);
-		clearDataElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_BUTTON, nameID);
-	}
-	public boolean isDynamicAlertMessageDisplayedAndAcceptAlert(WebDriver driver, String expectedAlertMessage) {
-		waitForAlertPresent(driver);
-		String actualAlertMessage = getTextAlert(driver);
-		acceptAlert(driver);
-		return actualAlertMessage.equals(expectedAlertMessage);
-		
-	}
 	
 	private WebElement element;
 	private List<WebElement> elements;

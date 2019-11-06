@@ -6,7 +6,7 @@
 	<name>CUCUMBER_11_NHANPV</name>
 	<properties>
 		<cucumber.version> 1.2.5 </cucumber.version>
-		<selenium.version> 2.53.1 </selenium.version>
+		<selenium.version>3.141.59</selenium.version>
 	</properties>
 
 	<dependencies>
@@ -60,6 +60,12 @@
 			<artifactId>cucumber-reporting</artifactId>
 			<version>3.20.0</version>
 		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -80,10 +86,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.18.1</version>
+				<version>2.22.2</version>
 				<configuration>
 					<includes>
-						<include>**/*/CucumberTestRunner.java</include>
+						<include>**/*/BankTestRunner.java</include>
 					</includes>
 				</configuration>
 			</plugin>
@@ -101,8 +107,8 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>SELENIUM ONLINE - BANK GURU</projectName>
-							<outputDirectory>${project.build.directory}/site/cucumber-reporting</outputDirectory>
+							<projectName>BANK GURU</projectName>
+							<outputDirectory>${project.build.directory}/site/cucumber-reporting-html</outputDirectory>
 							<cucumberOutput>${project.build.directory}/site/cucumber.json</cucumberOutput>
 							<enableFlashCharts>true</enableFlashCharts>
 							<skippedFails>true</skippedFails>

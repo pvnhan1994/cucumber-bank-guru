@@ -8,12 +8,12 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/features", //tro den file feature
-		glue = "bank/stepDefinitions",
-		monochrome = true,
-		plugin= {"pretty", "html:target/site/cucumber-report-default", "json:target/site/cucumber.json"},
-		snippets = SnippetType.CAMELCASE,
-		tags = {"@login"})
+        features = "src/test/java/features", //tro den file feature
+        glue = "bank/stepDefinitions",
+        monochrome = true,
+        plugin = {"pretty", "html:target/site/cucumber-report-default", "json:target/site/cucumber.json"},
+        snippets = SnippetType.CAMELCASE,
+        tags = {"@payment"})
 
 public class BankTestRunner {
 
