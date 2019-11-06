@@ -9,8 +9,10 @@
 /Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageObjects/EditCustomerPageObject.java
 /Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageObjects/EditAccountPageObject.java
 /Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageObjects/LoginPageObject.java
+/Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageObjects/DynamicPageObject.java
 /Users/nhanpv/Documents/workspace/Cucumber/src/main/java/commons/Constants.java
 /Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageObjects/NewAccountPageObject.java
+/Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageUIs/DynamicPageUI.java
 /Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageObjects/DeleteAccountPageObject.java
 /Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageUIs/HomePageUI.java
 /Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageUIs/LoginPageUI.java
@@ -19,5 +21,4 @@
 /Users/nhanpv/Documents/workspace/Cucumber/src/main/java/commons/PageGeneratorManager.java
 /Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageObjects/WithdrawalPageObject.java
 /Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageObjects/DeleteCustomerPageObject.java
-/Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageUIs/AbstractPageUI.java
 /Users/nhanpv/Documents/workspace/Cucumber/src/main/java/pageUIs/RegisterPageUI.java

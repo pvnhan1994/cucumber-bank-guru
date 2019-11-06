@@ -60,6 +60,12 @@
 			<artifactId>cucumber-reporting</artifactId>
 			<version>3.20.0</version>
 		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -78,7 +84,6 @@
 
 			<!-- Run testcase/ test suite -->
 			<plugin>
-
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.2</version>
@@ -93,7 +98,7 @@
 			<plugin>
 				<groupId>net.masterthought</groupId>
 				<artifactId>maven-cucumber-reporting</artifactId>
-				<version>4.10.0</version>
+				<version>3.10.0</version>
 				<executions>
 					<execution>
 						<id>execution</id>
@@ -103,10 +108,10 @@
 						</goals>
 						<configuration>
 							<projectName>BANK GURU</projectName>
-							<outputDirectory>${project.build.directory}/site/cucumber-reporting</outputDirectory>
+							<outputDirectory>${project.build.directory}/site/cucumber-reporting-html</outputDirectory>
 							<cucumberOutput>${project.build.directory}/site/cucumber.json</cucumberOutput>
-							<skippedFails>true</skippedFails>
 							<enableFlashCharts>true</enableFlashCharts>
+							<skippedFails>true</skippedFails>
 						</configuration>
 					</execution>
 				</executions>

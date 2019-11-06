@@ -21,7 +21,7 @@ public class AbstractTest {
 	private WebDriver driver;
 	protected final Log log;
 
-	protected AbstractTest() {
+	public AbstractTest() {
 		log = LogFactory.getLog(getClass());
 	}
 	public WebDriver getDriver() {
@@ -68,7 +68,7 @@ public class AbstractTest {
 		return pass;
 	}
 
-	protected boolean verifyTrue(boolean condition) {
+	public boolean verifyTrue(boolean condition) {
 		return checkPassed(condition);
 	}
 
@@ -87,11 +87,11 @@ public class AbstractTest {
 		return pass;
 	}
 
-	protected boolean verifyFalse(boolean condition) {
+	public boolean verifyFalse(boolean condition) {
 		return checkFailed(condition);
 	}
 
-	private boolean checkEquals(Object actual, Object expected) {
+	public boolean checkEquals(Object actual, Object expected) {
 		boolean pass = true;
 		boolean status;
 		try {
@@ -119,10 +119,10 @@ public class AbstractTest {
 		return pass;
 	}
 
-	protected boolean verifyEquals(Object actual, Object expected) {
+	public boolean verifyEquals(Object actual, Object expected) {
 		return checkEquals(actual, expected);
 	}
-	protected int randomDataTest() {
+	public int randomDataTest() {
 		Random random = new Random();
 		return random.nextInt(99999);
 	}

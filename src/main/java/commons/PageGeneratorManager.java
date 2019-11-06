@@ -2,19 +2,7 @@ package commons;
 
 import org.openqa.selenium.WebDriver;
 
-import pageObjects.BalanceEnquiryPageObject;
-import pageObjects.DeleteAccountPageObject;
-import pageObjects.DeleteCustomerPageObject;
-import pageObjects.DepositPageObject;
-import pageObjects.EditAccountPageObject;
-import pageObjects.EditCustomerPageObject;
-import pageObjects.FundTransferPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.NewAccountPageObject;
-import pageObjects.NewCustomerPageObject;
-import pageObjects.RegisterPageObject;
-import pageObjects.WithdrawalPageObject;
+import pageObjects.*;
 
 public class PageGeneratorManager {
 	public static LoginPageObject getLoginPage(WebDriver driver) {
@@ -67,6 +55,9 @@ public class PageGeneratorManager {
 
 	public static DeleteAccountPageObject getDeleteAccount(WebDriver driver) {
 		return new DeleteAccountPageObject(driver);
+	}
+	public static DynamicPageObject getDynamicPage(WebDriver driver) {
+		return new DynamicPageObject(driver);
 	}
 
 }
